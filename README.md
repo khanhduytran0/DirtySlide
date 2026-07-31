@@ -20,3 +20,24 @@ make                 # builds the payload into ./dist
 
 Tested on macOS 26.5 (`25F5042g`) arm64 under Apple Virtualization (VMAPPLE). The physical
 scan panics ~50% of runs; the guest reboots, just run again.
+
+## Build & run on iOS
+- Build this Xcode project
+- Launch app and press "Crash in dsc region"
+- Type the following command (TODO: do this on-device using idevice + VPN?)
+```
+# Note: I added _SafeMode so it can also be reproduced on jailbroken device.
+# As it does some trick to switch between in-cache dylibs and fake dylibs,
+# it will cause missing libraries when linking against tweak libraries
+
+export CORE_DEVICE_ID=iPhone-0x11-cua-Duy.coredevice.local
+export APP_BUNDLE_ID=com.ios.DirtySlide
+# replace with your device and bundle ID
+
+# on macOS:
+xcrun devicectl device process launch --device $CORE_DEVICE_ID --console --no-activate -e '{"_SafeMode": "1", "DYLD_SHARED_CACHE_DIR": "/a"}' $APP_BUNDLE_ID
+
+# on Linux/Windows: use pymobiledevice3
+pymobiledevice3 developer dvt launch --env DYLD_SHARED_CACHE_DIR /a --env _SafeMode 1 --stream $APP_BUNDLE_ID
+```
+- Done. Kernel panicked. If it doesn't work try again after 3 minutes

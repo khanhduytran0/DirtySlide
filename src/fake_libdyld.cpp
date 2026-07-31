@@ -1,6 +1,17 @@
 #include <stddef.h>
 #include <stdint.h>
 
+extern "C"
+void* dlopen(const char* a, int b) {
+    return NULL;
+}
+extern "C"
+void* dlsym(void* a, const char* b) {
+    return NULL;
+}
+
+void *_ZTVN10__cxxabiv117__class_type_infoE;
+
 extern "C" {
 const char* __progname = nullptr;
 int NXArgc = 0;
@@ -62,7 +73,7 @@ struct [[clang::ptrauth_vtable_pointer(process_independent, address_discriminati
 };
 
 namespace dyld4 {
-__attribute__((visibility("hidden"), section("__TPRO_CONST,__dyld_apis")))
+__attribute__((section("__TPRO_CONST,__dyld_apis")))
 void* gAPIs = nullptr;
 }
 

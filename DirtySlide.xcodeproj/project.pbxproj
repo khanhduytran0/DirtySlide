@@ -1,0 +1,1057 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E12300F9301CE4E100DA851A /* libdyld.dylib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E12300F2301CE4E100DA851A /* libdyld.dylib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E123FF22301CBDA300DA851A /* libSystem.B.dylib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E123FF1B301CBDA300DA851A /* libSystem.B.dylib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E18067F82E99F49D00C468E0 /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E18067F12E99F49D00C468E0 /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E12300F6301CE4E100DA851A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E10C77722DA3EE2E000C6C74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E12300F1301CE4E100DA851A;
+			remoteInfo = libdyld;
+		};
+		E123FF1F301CBDA300DA851A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E10C77722DA3EE2E000C6C74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E123FF1A301CBDA300DA851A;
+			remoteInfo = libSystem.B.dylib;
+		};
+		E18067F52E99F49D00C468E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E10C77722DA3EE2E000C6C74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E18067F02E99F49D00C468E0;
+			remoteInfo = test;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E123FCD3301C46B100DA851A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = system;
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E18067FD2E99F49D00C468E0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E12300F9301CE4E100DA851A /* libdyld.dylib.framework in Embed Frameworks */,
+				E123FF22301CBDA300DA851A /* libSystem.B.dylib.framework in Embed Frameworks */,
+				E18067F82E99F49D00C468E0 /* UI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		E10C777A2DA3EE2E000C6C74 /* DirtySlide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DirtySlide.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E12300F2301CE4E100DA851A /* libdyld.dylib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = libdyld.dylib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1230272301D6E2B00DA851A /* dirtyslide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dirtyslide.png; sourceTree = "<group>"; };
+		E1230273301D6E3400DA851A /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		E123FE73301CACD400DA851A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = README.md; sourceTree = "<group>"; };
+		E123FF1B301CBDA300DA851A /* libSystem.B.dylib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = libSystem.B.dylib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E18067F12E99F49D00C468E0 /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1EC770C301A312500ED4F2B /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		E10C77A72DA3EE2F000C6C74 /* Exceptions for "DirtySlide" folder in "DirtySlide" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				adhoc.xcconfig,
+				Info.plist,
+			);
+			target = E10C77792DA3EE2E000C6C74 /* DirtySlide */;
+		};
+		E123017D301CF0E200DA851A /* Exceptions for "src" folder in "libSystem" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				fake_libsystem.c,
+			);
+			target = E123FF1A301CBDA300DA851A /* libSystem */;
+		};
+		E123017E301CF0E200DA851A /* Exceptions for "src" folder in "libdyld" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				fake_libsystem.c,
+				launcher.c,
+				suidwrap.c,
+				t_reslide_zf.c,
+			);
+			target = E12300F1301CE4E100DA851A /* libdyld */;
+		};
+		E1230183301CF14000DA851A /* Exceptions for "src" folder in "DirtySlide" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				t_reslide_zf.c,
+			);
+			target = E10C77792DA3EE2E000C6C74 /* DirtySlide */;
+		};
+		E1230184301CF1D000DA851A /* Exceptions for "Libraries" folder in "DirtySlide" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				libdyld.tbd,
+				libSystem.B.tbd,
+			);
+			target = E10C77792DA3EE2E000C6C74 /* DirtySlide */;
+		};
+		E1230185301CF1D000DA851A /* Exceptions for "Libraries" folder in "libSystem" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				libsystem_kernel.tbd,
+			);
+			target = E123FF1A301CBDA300DA851A /* libSystem */;
+		};
+		E1230186301CF1D000DA851A /* Exceptions for "Libraries" folder in "libdyld" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				libSystem.B.tbd,
+			);
+			target = E12300F1301CE4E100DA851A /* libdyld */;
+		};
+		E123F8C0301C0C5B00DA851A /* Exceptions for "UI" folder in "UI" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AppDelegate.h,
+				SceneDelegate.h,
+				ViewController.h,
+			);
+			target = E18067F02E99F49D00C468E0 /* UI */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		E123009A301CDB6100DA851A /* Exceptions for "Libraries" folder in "Embed Frameworks" phase from "DirtySlide" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			attributesByRelativePath = {
+				libsystem_kernel.dylib = (CodeSignOnCopy, );
+			};
+			buildPhase = E18067FD2E99F49D00C468E0 /* Embed Frameworks */;
+			membershipExceptions = (
+				libsystem_kernel.dylib,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		E10C777C2DA3EE2E000C6C74 /* DirtySlide */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E10C77A72DA3EE2F000C6C74 /* Exceptions for "DirtySlide" folder in "DirtySlide" target */,
+			);
+			path = DirtySlide;
+			sourceTree = "<group>";
+		};
+		E12300F3301CE4E100DA851A /* src */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E1230183301CF14000DA851A /* Exceptions for "src" folder in "DirtySlide" target */,
+				E123017D301CF0E200DA851A /* Exceptions for "src" folder in "libSystem" target */,
+				E123017E301CF0E200DA851A /* Exceptions for "src" folder in "libdyld" target */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		E1230271301D6DFC00DA851A /* scripts */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = scripts;
+			sourceTree = "<group>";
+		};
+		E123FF29301CC2F300DA851A /* Libraries */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E1230184301CF1D000DA851A /* Exceptions for "Libraries" folder in "DirtySlide" target */,
+				E123009A301CDB6100DA851A /* Exceptions for "Libraries" folder in "Embed Frameworks" phase from "DirtySlide" target */,
+				E1230185301CF1D000DA851A /* Exceptions for "Libraries" folder in "libSystem" target */,
+				E1230186301CF1D000DA851A /* Exceptions for "Libraries" folder in "libdyld" target */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		E18067F22E99F49D00C468E0 /* UI */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E123F8C0301C0C5B00DA851A /* Exceptions for "UI" folder in "UI" target */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E10C77772DA3EE2E000C6C74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E12300EF301CE4E100DA851A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E123FF18301CBDA300DA851A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E18067EE2E99F49D00C468E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E10C77712DA3EE2E000C6C74 = {
+			isa = PBXGroup;
+			children = (
+				E1230272301D6E2B00DA851A /* dirtyslide.png */,
+				E1230273301D6E3400DA851A /* Makefile */,
+				E123FE73301CACD400DA851A /* README.md */,
+				E12300F3301CE4E100DA851A /* src */,
+				E1230271301D6DFC00DA851A /* scripts */,
+				E10C777C2DA3EE2E000C6C74 /* DirtySlide */,
+				E18067F22E99F49D00C468E0 /* UI */,
+				E123FF29301CC2F300DA851A /* Libraries */,
+				E18067EA2E99F46700C468E0 /* Frameworks */,
+				E10C777B2DA3EE2E000C6C74 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E10C777B2DA3EE2E000C6C74 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E10C777A2DA3EE2E000C6C74 /* DirtySlide.app */,
+				E18067F12E99F49D00C468E0 /* UI.framework */,
+				E123FF1B301CBDA300DA851A /* libSystem.B.dylib.framework */,
+				E12300F2301CE4E100DA851A /* libdyld.dylib.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E18067EA2E99F46700C468E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1EC770C301A312500ED4F2B /* IOKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E12300ED301CE4E100DA851A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E123FF16301CBDA300DA851A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E18067EC2E99F49D00C468E0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		E10C77792DA3EE2E000C6C74 /* DirtySlide */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E10C77A82DA3EE2F000C6C74 /* Build configuration list for PBXNativeTarget "DirtySlide" */;
+			buildPhases = (
+				E10C77762DA3EE2E000C6C74 /* Sources */,
+				E10C77772DA3EE2E000C6C74 /* Frameworks */,
+				E10C77782DA3EE2E000C6C74 /* Resources */,
+				E18067FD2E99F49D00C468E0 /* Embed Frameworks */,
+				E123FCD3301C46B100DA851A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E18067F62E99F49D00C468E0 /* PBXTargetDependency */,
+				E123FF20301CBDA300DA851A /* PBXTargetDependency */,
+				E12300F7301CE4E100DA851A /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				E10C777C2DA3EE2E000C6C74 /* DirtySlide */,
+			);
+			name = DirtySlide;
+			packageProductDependencies = (
+			);
+			productName = DirtySlide;
+			productReference = E10C777A2DA3EE2E000C6C74 /* DirtySlide.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E12300F1301CE4E100DA851A /* libdyld */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E12300FB301CE4E100DA851A /* Build configuration list for PBXNativeTarget "libdyld" */;
+			buildPhases = (
+				E12300ED301CE4E100DA851A /* Headers */,
+				E12300EE301CE4E100DA851A /* Sources */,
+				E12300EF301CE4E100DA851A /* Frameworks */,
+				E12300F0301CE4E100DA851A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				E12300F3301CE4E100DA851A /* src */,
+			);
+			name = libdyld;
+			packageProductDependencies = (
+			);
+			productName = libdyld;
+			productReference = E12300F2301CE4E100DA851A /* libdyld.dylib.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E123FF1A301CBDA300DA851A /* libSystem */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E123FF23301CBDA300DA851A /* Build configuration list for PBXNativeTarget "libSystem" */;
+			buildPhases = (
+				E123FF16301CBDA300DA851A /* Headers */,
+				E123FF17301CBDA300DA851A /* Sources */,
+				E123FF18301CBDA300DA851A /* Frameworks */,
+				E12300EC301CE10700DA851A /* ShellScript */,
+				E123FF19301CBDA300DA851A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libSystem;
+			packageProductDependencies = (
+			);
+			productName = libSystem.B.dylib;
+			productReference = E123FF1B301CBDA300DA851A /* libSystem.B.dylib.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E18067F02E99F49D00C468E0 /* UI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E18067F92E99F49D00C468E0 /* Build configuration list for PBXNativeTarget "UI" */;
+			buildPhases = (
+				E18067EC2E99F49D00C468E0 /* Headers */,
+				E18067ED2E99F49D00C468E0 /* Sources */,
+				E18067EE2E99F49D00C468E0 /* Frameworks */,
+				E18067EF2E99F49D00C468E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				E18067F22E99F49D00C468E0 /* UI */,
+			);
+			name = UI;
+			packageProductDependencies = (
+			);
+			productName = test;
+			productReference = E18067F12E99F49D00C468E0 /* UI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E10C77722DA3EE2E000C6C74 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					E10C77792DA3EE2E000C6C74 = {
+						CreatedOnToolsVersion = 16.3;
+						LastSwiftMigration = 2700;
+					};
+					E12300F1301CE4E100DA851A = {
+						CreatedOnToolsVersion = 27.0;
+					};
+					E123FF1A301CBDA300DA851A = {
+						CreatedOnToolsVersion = 27.0;
+					};
+					E18067F02E99F49D00C468E0 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+				};
+			};
+			buildConfigurationList = E10C77752DA3EE2E000C6C74 /* Build configuration list for PBXProject "DirtySlide" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E10C77712DA3EE2E000C6C74;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E10C777B2DA3EE2E000C6C74 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E10C77792DA3EE2E000C6C74 /* DirtySlide */,
+				E18067F02E99F49D00C468E0 /* UI */,
+				E123FF1A301CBDA300DA851A /* libSystem */,
+				E12300F1301CE4E100DA851A /* libdyld */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E10C77782DA3EE2E000C6C74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E12300F0301CE4E100DA851A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E123FF19301CBDA300DA851A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E18067EF2E99F49D00C468E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E12300EC301CE10700DA851A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "install_name_tool -change /usr/lib/system/libsystem_kernel.dylib @rpath/libsystem_kernel.dylib \"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.framework/libSystem.B.dylib\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E10C77762DA3EE2E000C6C74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E12300EE301CE4E100DA851A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E123FF17301CBDA300DA851A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E18067ED2E99F49D00C468E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E12300F7301CE4E100DA851A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E12300F1301CE4E100DA851A /* libdyld */;
+			targetProxy = E12300F6301CE4E100DA851A /* PBXContainerItemProxy */;
+		};
+		E123FF20301CBDA300DA851A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E123FF1A301CBDA300DA851A /* libSystem */;
+			targetProxy = E123FF1F301CBDA300DA851A /* PBXContainerItemProxy */;
+		};
+		E18067F62E99F49D00C468E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E18067F02E99F49D00C468E0 /* UI */;
+			targetProxy = E18067F52E99F49D00C468E0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E10C77A92DA3EE2F000C6C74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DirtySlide/DirtySlide.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UU7W52U79B;
+				ENABLE_DEBUG_DYLIB = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DirtySlide/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/lib,
+					/usr/lib/system,
+					"@executable_path/Frameworks",
+					"@executable_path/Frameworks/libdyld.dylib.framework",
+					"@executable_path/Frameworks/libSystem.B.dylib.framework",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DirtySlide",
+					"$(PROJECT_DIR)/Libraries",
+					"$(PROJECT_DIR)",
+				);
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ios.DirtySlide.$(DEVELOPMENT_TEAM)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E10C77AA2DA3EE2F000C6C74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DirtySlide/DirtySlide.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UU7W52U79B;
+				ENABLE_DEBUG_DYLIB = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DirtySlide/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/lib,
+					/usr/lib/system,
+					"@executable_path/Frameworks",
+					"@executable_path/Frameworks/libdyld.dylib.framework",
+					"@executable_path/Frameworks/libSystem.B.dylib.framework",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DirtySlide",
+					"$(PROJECT_DIR)/Libraries",
+					"$(PROJECT_DIR)",
+				);
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ios.DirtySlide.$(DEVELOPMENT_TEAM)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E10C77AB2DA3EE2F000C6C74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = E10C777C2DA3EE2E000C6C74 /* DirtySlide */;
+			baseConfigurationReferenceRelativePath = adhoc.xcconfig;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Z325T66NZ7;
+				ENABLE_CODE_COVERAGE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "-fcommon";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E10C77AC2DA3EE2F000C6C74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Z325T66NZ7;
+				ENABLE_CODE_COVERAGE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				OTHER_CFLAGS = "-fcommon";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E12300FC301CE4E100DA851A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = UU7W52U79B;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				LD_DYLIB_INSTALL_NAME = /usr/lib/system/libdyld.dylib;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Libraries",
+				);
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				OTHER_LDFLAGS = "-Wl,-not_for_dyld_shared_cache";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.libdyld;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier).dylib";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E12300FD301CE4E100DA851A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = UU7W52U79B;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				LD_DYLIB_INSTALL_NAME = /usr/lib/system/libdyld.dylib;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Libraries",
+				);
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				OTHER_LDFLAGS = "-Wl,-not_for_dyld_shared_cache";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.libdyld;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier).dylib";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E123FF24301CBDA300DA851A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULE_DEBUGGING = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = UU7W52U79B;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_CODE_COVERAGE = NO;
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXECUTABLE_EXTENSION = "";
+				EXECUTABLE_PREFIX = "";
+				FRAMEWORK_VERSION = A;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				LD_DYLIB_INSTALL_NAME = /usr/lib/libSystem.B.dylib;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries",
+					"$(PROJECT_DIR)",
+				);
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				OTHER_LDFLAGS = (
+					"-Wl,-not_for_dyld_shared_cache",
+					"-fno-profile-instr-generate",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.LibCTiny;
+				PRODUCT_NAME = libSystem.B.dylib;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E123FF25301CBDA300DA851A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULE_DEBUGGING = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = UU7W52U79B;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_CODE_COVERAGE = NO;
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXECUTABLE_EXTENSION = "";
+				EXECUTABLE_PREFIX = "";
+				FRAMEWORK_VERSION = A;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				LD_DYLIB_INSTALL_NAME = /usr/lib/libSystem.B.dylib;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries",
+					"$(PROJECT_DIR)",
+				);
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				OTHER_LDFLAGS = (
+					"-Wl,-not_for_dyld_shared_cache",
+					"-fno-profile-instr-generate",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.LibCTiny;
+				PRODUCT_NAME = libSystem.B.dylib;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E18067FA2E99F49D00C468E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = UU7W52U79B;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = poc.test;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E18067FB2E99F49D00C468E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = UU7W52U79B;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = poc.test;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E10C77752DA3EE2E000C6C74 /* Build configuration list for PBXProject "DirtySlide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E10C77AB2DA3EE2F000C6C74 /* Debug */,
+				E10C77AC2DA3EE2F000C6C74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E10C77A82DA3EE2F000C6C74 /* Build configuration list for PBXNativeTarget "DirtySlide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E10C77A92DA3EE2F000C6C74 /* Debug */,
+				E10C77AA2DA3EE2F000C6C74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E12300FB301CE4E100DA851A /* Build configuration list for PBXNativeTarget "libdyld" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E12300FC301CE4E100DA851A /* Debug */,
+				E12300FD301CE4E100DA851A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E123FF23301CBDA300DA851A /* Build configuration list for PBXNativeTarget "libSystem" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E123FF24301CBDA300DA851A /* Debug */,
+				E123FF25301CBDA300DA851A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E18067F92E99F49D00C468E0 /* Build configuration list for PBXNativeTarget "UI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E18067FA2E99F49D00C468E0 /* Debug */,
+				E18067FB2E99F49D00C468E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E10C77722DA3EE2E000C6C74 /* Project object */;
+}
