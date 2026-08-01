@@ -1,3 +1,26 @@
+#include <mach-o/dyld.h>
+#include <mach-o/getsect.h>
+#include <mach-o/loader.h>
+#include <mach-o/nlist.h>
+#include <stdio.h>
+#include <stdint.h>
+
+#define WRAP_DYLD(func) \
+    static void* dyld_##func; \
+    __asm__( \
+        ".global _" #func "\n\t" \
+        "_" #func ":\n\t" \
+        "adrp x16, _dyld_" #func "@PAGE\n\t" \
+        "add x16, x16, _dyld_" #func "@PAGEOFF\n\t" \
+        "ldr x16, [x16]\n\t" \
+        "br x16\n" \
+    );
+WRAP_DYLD(open)
+WRAP_DYLD(_simple_dprintf)
+
+extern void _simple_dprintf(int __fd, const char *__fmt, ...);
+const char **environ;
+
 __attribute__((visibility("default")))
 void
 libSystem_initializer(int argc, const char *argv[], const char *envp[], const char *apple[],
@@ -8,6 +31,7 @@ libSystem_initializer(int argc, const char *argv[], const char *envp[], const ch
 	(void)envp;
 	(void)apple;
 	(void)vars;
+    environ = envp;
 }
 
 __attribute__((visibility("default")))
@@ -22,18 +46,78 @@ char* getenv(const char *key) {
     return 0;
 }
 
-__attribute__((naked))
-int open(const char *path, int flags, ...) {
-    __asm__ volatile(
-        "mov x16, #5\n"     // Syscall number for open on Darwin/iOS
-        "svc #0\n"          // Trigger kernel trap
-        "ret\n"             // Return to caller (result in x0)
-    );
-}
-
 int strcmp(const char* s1, const char* s2) {
     while (*s1 && (*s1 == *s2)) {
         s1++; s2++;
     }
     return *(const unsigned char*)s1 - *(const unsigned char*)s2;
+}
+
+int strncmp(const char* s1, const char* s2, size_t n) {
+    while (n > 0 && *s1 && (*s1 == *s2)) {
+        s1++; s2++; n--;
+    }
+    if (n == 0) {
+        return 0;
+    }
+    return *(const unsigned char*)s1 - *(const unsigned char*)s2;
+}
+
+// from litehook
+void *litehook_find_symbol(const struct mach_header_64 *header, const char *symbolName) {
+    struct symtab_command *symtabCommand = NULL;
+    struct segment_command_64 *linkeditSegCommand = NULL;
+    uint64_t slide = -1;
+    uint32_t off = 0;
+    for (uint32_t i = 0; i < header->ncmds && off < header->sizeofcmds; i++) {
+        struct load_command *lc = (struct load_command *)((uintptr_t)header + sizeof(struct mach_header_64) + off);
+        if (lc->cmd == LC_SYMTAB) {
+            symtabCommand = (struct symtab_command *)lc;
+        }
+        else if (lc->cmd == LC_SEGMENT_64) {
+            struct segment_command_64 *segCmd = (struct segment_command_64 *)lc;
+            if (slide == -1) {
+                slide = (uintptr_t)header - segCmd->vmaddr;
+            }
+            if (!strncmp(segCmd->segname, "__LINKEDIT", sizeof(segCmd->segname))) {
+                linkeditSegCommand = segCmd;
+            }
+        }
+        if (symtabCommand && linkeditSegCommand) break;
+        off += lc->cmdsize;
+    }
+    if (!symtabCommand || !linkeditSegCommand) return NULL;
+    uint8_t *linkedit = (uint8_t *)((uintptr_t)header + linkeditSegCommand->vmaddr);
+    struct nlist_64 *syms = (struct nlist_64 *)(linkedit + (symtabCommand->symoff - linkeditSegCommand->fileoff));
+    char *strtbl = (char *)(linkedit + (symtabCommand->stroff - linkeditSegCommand->fileoff));
+    size_t strtblSize = symtabCommand->strsize;
+    for (uint32_t i = 0; i < symtabCommand->nsyms; i++) {
+        struct nlist_64 *symEntry = &syms[i];
+        uint32_t stroff = symEntry->n_un.n_strx;
+        if (stroff >= strtblSize || off == 0) {
+            continue;
+        }
+        if ((symEntry->n_type & N_TYPE) != N_SECT) {
+            continue;
+        }
+        const char* curSymbolName = &strtbl[stroff];
+        if (curSymbolName[0] == '\x00') {
+            continue;
+        }
+        if (!strcmp(curSymbolName, symbolName)) {
+            return (void *)((uintptr_t)header + symEntry->n_value);
+        }
+    }
+    return NULL;
+}
+
+__attribute__((constructor))
+void libSystem_bindFromDyld(void) {
+    uint64_t lr = ((uint64_t)__builtin_return_address(0)) & ~0x3fff;
+    while (*(uint32_t*)lr != MH_MAGIC_64) {
+        lr -= 0x4000;
+    }
+    struct mach_header_64 *mh = (void *)lr;
+    dyld_open = litehook_find_symbol(mh, "_open");
+    dyld__simple_dprintf = litehook_find_symbol(mh, "__simple_dprintf");
 }

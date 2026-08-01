@@ -284,7 +284,7 @@ main(int argc, char **argv)
 	}
 
 	if ((ret = posix_spawnattr_init(&attr)) != 0 ||
-	    (ret = posix_spawnattr_setflags(&attr, _POSIX_SPAWN_RESLIDE)) != 0 ||
+	    (ret = posix_spawnattr_setflags(&attr, _POSIX_SPAWN_RESLIDE | POSIX_SPAWN_SETEXEC)) != 0 ||
 	    (ret = posix_spawn_file_actions_init(&fa)) != 0 ||
 	    (ret = posix_spawn_file_actions_adddup2(&fa, fd, 3)) != 0) {
 		fprintf(stderr, "spawn setup: %s\n", strerror(ret));
