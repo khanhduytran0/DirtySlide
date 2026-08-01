@@ -684,6 +684,7 @@
 				OTHER_CFLAGS = (
 					"-fcommon",
 					"-fno-stack-protector",
+					"-fno-stack-check",
 				);
 				SDKROOT = iphoneos;
 			};
@@ -745,6 +746,7 @@
 				OTHER_CFLAGS = (
 					"-fcommon",
 					"-fno-stack-protector",
+					"-fno-stack-check",
 				);
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

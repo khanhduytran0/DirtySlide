@@ -7,6 +7,8 @@
 
 @import Darwin;
 
+int minimal_CVE_2026_43724(void);
+
 int cmain(uint64_t *sp0);
 __attribute__((no_stack_protector))
 int CVE_2026_dyld(void) {
@@ -29,6 +31,9 @@ int main(int argc, char *argv[], char *envp[], char *apple[]) {
         uint32_t *crash_buf = (uint32_t *)strcmp;
         *crash_buf = 0;
         return -1;
+    } else if ((argc > 1 && !strcmp(argv[1], "--run")) || getenv("run")) {
+        _exit(minimal_CVE_2026_43724());
+        return -1;
     }
     
     void *uiHandle = dlopen("@executable_path/Frameworks/UI.framework/UI", RTLD_GLOBAL);
@@ -38,6 +43,6 @@ int main(int argc, char *argv[], char *envp[], char *apple[]) {
         return uiMain(argc, argv, envp, apple);
     }
     
-    CVE_2026_dyld();
-    return 0;
+    _exit(minimal_CVE_2026_43724());
+    return -1;
 }

@@ -4,7 +4,29 @@
 #include <mach-o/nlist.h>
 #include <stdio.h>
 #include <stdint.h>
+#include <sys/syscall.h>
+#include <time.h>
+#include <unistd.h>
 
+#define TO_STR_HELPER(x) #x
+#define TO_STR(x) TO_STR_HELPER(x)
+#define SYSCALL(func) \
+    __asm__( \
+        ".global _" #func "\n\t" \
+        "_" #func ":\n\t" \
+        "mov x16, " TO_STR(SYS_##func) "\n\t" \
+        "svc #0x80\n\t" \
+        "b.lo Lret\n\t" \
+        "pacibsp\n\t" \
+        "stp x29, x30, [sp, #-0x10]!\n\t" \
+        "mov x29, sp\n\t" \
+        "bl _cerror_nocancel\n\t" \
+        "mov sp, x29\n\t" \
+        "ldp x29, x30, [sp], #0x10\n\t" \
+        "retab\n\t" \
+        "Lret:\n\t" \
+        "ret\n\t" \
+    );
 #define WRAP_DYLD(func) \
     static void* dyld_##func; \
     __asm__( \
@@ -15,10 +37,24 @@
         "ldr x16, [x16]\n\t" \
         "br x16\n" \
     );
-WRAP_DYLD(open)
+
+SYSCALL(fileport_makeport)
+WRAP_DYLD(__error)
+WRAP_DYLD(__shared_region_check_np)
+WRAP_DYLD(__shared_region_map_and_slide_2_np)
+WRAP_DYLD(_exit)
 WRAP_DYLD(_simple_dprintf)
+WRAP_DYLD(cerror_nocancel)
+WRAP_DYLD(close)
+WRAP_DYLD(getpid)
+WRAP_DYLD(open)
+WRAP_DYLD(sleep_ns)
+WRAP_DYLD(socket)
+WRAP_DYLD(syscall)
+#undef WRAP_DYLD
 
 extern void _simple_dprintf(int __fd, const char *__fmt, ...);
+extern void sleep_ns(uint64_t ns);
 const char **environ;
 
 __attribute__((visibility("default")))
@@ -42,8 +78,26 @@ _libSystem_initializer(int argc, const char *argv[], const char *envp[], const c
 	libSystem_initializer(argc, argv, envp, apple, vars);
 }
 
+int usleep(useconds_t usec) {
+    sleep_ns(usec * 1000ull);
+    return 0;
+}
+
+unsigned int sleep(unsigned int s) {
+    return usleep(s * 1000000ull);
+}
+
 char* getenv(const char *key) {
     return 0;
+}
+
+void *memcpy(void *dest, const void *src, size_t n) {
+    unsigned char *d = dest;
+    const unsigned char *s = src;
+    while (n--) {
+        *d++ = *s++;
+    }
+    return dest;
 }
 
 int strcmp(const char* s1, const char* s2) {
@@ -118,6 +172,18 @@ void libSystem_bindFromDyld(void) {
         lr -= 0x4000;
     }
     struct mach_header_64 *mh = (void *)lr;
-    dyld_open = litehook_find_symbol(mh, "_open");
-    dyld__simple_dprintf = litehook_find_symbol(mh, "__simple_dprintf");
+#define WRAP_DYLD(func) dyld_##func = litehook_find_symbol(mh, "_" #func);
+    WRAP_DYLD(__error)
+    WRAP_DYLD(__shared_region_check_np)
+    WRAP_DYLD(__shared_region_map_and_slide_2_np)
+    WRAP_DYLD(_exit)
+    WRAP_DYLD(_simple_dprintf)
+    WRAP_DYLD(cerror_nocancel)
+    WRAP_DYLD(close)
+    WRAP_DYLD(getpid)
+    WRAP_DYLD(open)
+    WRAP_DYLD(sleep_ns)
+    WRAP_DYLD(socket)
+    WRAP_DYLD(syscall)
+#undef WRAP_DYLD
 }
